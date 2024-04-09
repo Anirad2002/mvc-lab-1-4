@@ -36,3 +36,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
 
+app.use((req, res, next) => {
+    res.status(404).render('NotFound');
+  });
