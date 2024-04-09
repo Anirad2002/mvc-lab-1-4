@@ -37,6 +37,10 @@ app.post('/add-student', (req, res) => {
 
 app.use(errorController.getNotFoundPage);
 
+app.use((req, res, next) => {
+  res.status(404).render('NotFound', { title: 'Not Found' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
